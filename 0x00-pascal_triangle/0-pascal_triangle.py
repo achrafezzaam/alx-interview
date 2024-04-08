@@ -3,7 +3,7 @@
 
 
 def pascal_triangle(n):
-    ''' The Main function of the program. 
+    ''' The Main function of the program.
 
     Args:
         n (int): The size of the Pascal Triangle
@@ -16,6 +16,7 @@ def pascal_triangle(n):
     for i in range(1, n):
         p_triangle[i] = row(p_triangle[i - 1], i+1)
     return p_triangle
+
 
 def row(prev_row, n):
     ''' This function is responsible of creating the rows of
@@ -32,4 +33,3 @@ def row(prev_row, n):
         if i != 0 and i != (n - 1):
             new_row[i] = prev_row[i] + prev_row[i - 1]
     return new_row
-
