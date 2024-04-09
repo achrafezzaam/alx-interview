@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 ''' Creating a Pascal Triangle for a given int '''
 
 
