@@ -10,26 +10,13 @@ def pascal_triangle(n):
     Return: A list of lists of integers representing
             the Pascal Triangle of n.
     '''
-    if n <= 0:
-        return []
-    p_triangle = [[1]] * n
-    for i in range(1, n):
-        p_triangle[i] = row(p_triangle[i - 1], i+1)
-    return p_triangle
-
-
-def row(prev_row, n):
-    ''' This function is responsible of creating the rows of
-        the Pascal Triangle
-
-    Args:
-        prev_row (list): The previous row of the Triangle
-        n (int)        : The row number
-    Return: A list of integers representing the row n
-            of the Pascal Triangle
-    '''
-    new_row = [1] * n
-    for i in range(n):
-        if i != 0 and i != (n - 1):
-            new_row[i] = prev_row[i] + prev_row[i - 1]
-    return new_row
+    triangle = []
+    if n > 0:
+        for i in range(1, n + 1):
+            row = []
+            value = 1
+            for j in range(1, i + 1):
+                row.append(value)
+                value = value * (i - j) // j
+            triangle.append(row)
+    return triangle
